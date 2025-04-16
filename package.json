@@ -1,6 +1,6 @@
 {
     "name": "comments-section",
-    "version": "0.0.11",
+    "version": "0.0.13",
     "description": "A comments section React component",
     "main": "dist/comments.js",
     "module": "dist/comments.js",

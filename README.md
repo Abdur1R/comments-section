@@ -7,6 +7,7 @@ Currently UI looks like this:
 
 Usage:
 
+```
 import React, { useState } from "react";
 import { Comments } from "comments-section";
 
@@ -92,3 +93,4 @@ const Dummy = () => {
 };
 
 export default Dummy;
+```

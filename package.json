@@ -1,67 +1,80 @@
 {
-    "name": "comments-section",
-    "version": "0.0.13",
-    "description": "A comments section React component",
-    "main": "dist/comments.js",
-    "module": "dist/comments.js",
-    "types": "dist/comments.d.ts",
-    "files": [
-        "dist"
+  "name": "comments-section",
+  "version": "0.0.13",
+  "description": "A comments section React component",
+  "main": "dist/comments.js",
+  "module": "dist/comments.js",
+  "types": "dist/comments.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "prepublishOnly": "npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-webpack5": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "babel-loader": "^9.2.1",
+    "eslint-plugin-storybook": "^0.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^8.6.12",
+    "webpack-cli": "^6.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "16": "^0.0.2",
+    "@ant-design/icons": "^5.4.0",
+    "@chatscope/chat-ui-kit-react": "^1.10.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.17.4",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "nvm": "^0.0.4",
+    "react-router-dom": "^6.16.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.99.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:storybook/recommended"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "scripts": {
-        "start": "webpack serve --mode development",
-        "build": "webpack --mode production",
-        "prepublishOnly": "npm run build"
-    },
-    "peerDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "devDependencies": {
-        "webpack": "^6.0.1",
-        "webpack-cli": "^6.0.1",
-        "babel-loader": "^9.2.1",
-        "@babel/core": "^7.26.9",
-        "@babel/preset-env": "^7.26.9",
-        "@babel/preset-react": "^7.26.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "dependencies": {
-        "16": "^0.0.2",
-        "@ant-design/icons": "^5.4.0",
-        "@chatscope/chat-ui-kit-react": "^1.10.1",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
-        "antd": "^5.17.4",
-        "axios": "^1.6.8",
-        "dotenv": "^16.4.5",
-        "nvm": "^0.0.4",
-        "react-router-dom": "^6.16.0",
-        "react-scripts": "5.0.1",
-        "typescript": "^4.9.5",
-        "web-vitals": "^2.1.4"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    }
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

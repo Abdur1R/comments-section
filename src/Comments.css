@@ -1,3 +1,7 @@
+.rc-textarea {
+    min-width: 300px;
+}
+
 .userInfo {
     display: flex;
     flex-direction: column;

@@ -23,7 +23,7 @@ const Comments = ({ commentsUrl, currentUserId, currentUserName, apis }:
             getCommentsApi: () => any,
             createCommentApi: (text: string, parentId: string, currentUserId: string, currentUserName: string) => any,
             updateCommentApi: (text: string, commentId: string, currentUserId: string, currentUserName: string) => any,
-            deleteCommentApi: (commentId:string) => any
+            deleteCommentApi: (commentId: string) => any
         }
     }) => {
     const {
@@ -86,7 +86,9 @@ const Comments = ({ commentsUrl, currentUserId, currentUserName, apis }:
 
     useEffect(() => {
         getCommentsApi().then((data: any) => {
-            setBackendComments(data);
+            setBackendComments(data.filter(
+                (backendComment: any) => backendComment.parentId === null
+            ));
             // setBackendComments([]);
         });
     }, []);
@@ -95,7 +97,9 @@ const Comments = ({ commentsUrl, currentUserId, currentUserName, apis }:
         <div className="comments">
             <CommentForm parentForm={true} submitLabel="POST" handleSubmit={addComment} />
             <div className="comments-container">
-                {rootComments.map((rootComment: any) => (
+                {backendComments.filter(
+                    (backendComment: any) => backendComment.parentId === null
+                ).map((rootComment: any) => (
                     <Comment
                         key={rootComment.id}
                         comment={rootComment}

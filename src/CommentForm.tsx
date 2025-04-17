@@ -25,7 +25,9 @@ const CommentForm = ({
     const isTextareaDisabled = text ? text.length === 0 : false;
     const onSubmit = (event: any) => {
         event.preventDefault();
-        handleSubmit(text);
+        if (text && text.length > 0) {
+            handleSubmit(text);
+        }
         setText("");
     };
 
@@ -65,20 +67,22 @@ const CommentForm = ({
                     <Mentions.Option key={index} value={item}>{item}</Mentions.Option>
                 ))}
             </Mentions>
-            <button className="comment-form-button" disabled={isTextareaDisabled}>
-                {submitLabel}
-            </button>
-            {
-                hasCancelButton && (
-                    <button
-                        type="button"
-                        className="comment-form-button comment-form-cancel-button"
-                        onClick={handleCancel}
-                    >
-                        Cancel
-                    </button>
-                )
-            }
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <button className="comment-form-button" disabled={isTextareaDisabled}>
+                    {submitLabel}
+                </button>
+                {
+                    hasCancelButton && (
+                        <button
+                            type="reset"
+                            className="comment-form-button comment-form-cancel-button"
+                            onClick={handleCancel}
+                        >
+                            Cancel
+                        </button>
+                    )
+                }
+            </div>
         </form >
     );
 };

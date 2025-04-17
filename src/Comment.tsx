@@ -106,36 +106,38 @@ const Comment = ({
                         }}
                     />
                 )}
-                <div className="comment-actions">
-                    {canReply && (
-                        <div
-                            className="comment-action"
-                            onClick={() =>
-                                setActiveComment({ id: comment.id, type: "replying" })
-                            }
-                        >
-                            Reply
-                        </div>
-                    )}
-                    {canEdit && (
-                        <div
-                            className="comment-action"
-                            onClick={() =>
-                                setActiveComment({ id: comment.id, type: "editing" })
-                            }
-                        >
-                            Edit
-                        </div>
-                    )}
-                    {canDelete && (
-                        <div
-                            className="comment-action"
-                            onClick={() => deleteComment(comment.id)}
-                        >
-                            Delete
-                        </div>
-                    )}
-                </div>
+                {!isReplying && !isEditing &&
+                    <div className="comment-actions">
+                        {canReply && (
+                            <div
+                                className="comment-action"
+                                onClick={() =>
+                                    setActiveComment({ id: comment.id, type: "replying" })
+                                }
+                            >
+                                Reply
+                            </div>
+                        )}
+                        {canEdit && (
+                            <div
+                                className="comment-action"
+                                onClick={() =>
+                                    setActiveComment({ id: comment.id, type: "editing" })
+                                }
+                            >
+                                Edit
+                            </div>
+                        )}
+                        {canDelete && (
+                            <div
+                                className="comment-action"
+                                onClick={() => deleteComment(comment.id)}
+                            >
+                                Delete
+                            </div>
+                        )}
+                    </div>
+                }
                 {isReplying && (
                     <CommentForm
                         submitLabel="Reply"

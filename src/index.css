@@ -15,7 +15,8 @@
     margin-top: 40px;
     overflow: scroll;
     /* max-height: 390px; */
-    height: calc(100vh - 350px);
+    /* height: calc(100vh - 350px); */
+    height: 100%;
     overflow-x: hidden;
 }
 
@@ -51,6 +52,9 @@
 }
 
 .comment-form-cancel-button {
+    background: #fff !important;
+    color: black;
+    border: 1px solid #5A6872;
     margin-left: 10px;
 }
 
